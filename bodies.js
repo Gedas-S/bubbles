@@ -17,6 +17,8 @@ function make_planet(x, y, size, color) {
         "#00000000, #00000000 75%, #000000BF 85%)"
     )
     planet.appendChild(shadow)
-    
+
+    planet.addEventListener("click", select_planet)
+
     return planet
 }
