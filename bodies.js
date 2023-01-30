@@ -18,7 +18,20 @@ function make_planet(x, y, size, color) {
     )
     planet.appendChild(shadow)
 
-    planet.addEventListener("click", select_planet)
+    planet.addEventListener("click", select_generic)
 
     return planet
+}
+
+function make_star(size, rgb) {
+    const star = document.createElement("div")
+    star.classList.add("star")
+    star.style.width = star.style.height = size + "em"
+    star.style.backgroundImage = (
+        "radial-gradient(farthest-side, " +
+        "rgb(" + rgb + "), rgb(" + rgb + ") 60%, rgba(" + rgb +",0.7) 61%, rgba(" + rgb + ",0))"
+    )
+    star.addEventListener("click", select_generic)
+
+    return star
 }

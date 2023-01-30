@@ -1,4 +1,4 @@
-function select_planet() {
+function select_generic() {
     let selected = document.getElementsByClassName("selected")
     for (const item of selected) {
         item.classList.remove("selected")
