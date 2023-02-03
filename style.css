@@ -1,11 +1,17 @@
-html, body, #main {
+html, body, #game-screen {
     height: 100%;
     margin: 0;
 }
 
+#game-screen, #main {
+    background-color: black;
+}
+
 #main {
     position: relative;
-    background-color: black;
+    width: 70em;
+    height: 50em;
+    margin: auto;
 }
 
 .star, .planet {
