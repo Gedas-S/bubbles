@@ -3,11 +3,11 @@ html, body, #game-screen {
     margin: 0;
 }
 
-#game-screen, #main {
+#game-screen, #system-view {
     background-color: black;
 }
 
-#main {
+#system-view {
     position: relative;
     width: 70em;
     height: 50em;
