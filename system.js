@@ -5,13 +5,12 @@ function render_system(system) {
 
 function draw_system(system) {
     bodies = []
-    for (let [name, data] of Object.entries(system.bodies)) {
+    for (let data of Object.values(system.bodies)) {
         if (data.type == "star") {
-            bodies.push(draw_star(data))
+            bodies.push((new Star(data)).draw())
         } else if (data.type == "planet") {
-            bodies.push(draw_planet(data))
+            bodies.push((new Planet(data)).draw())
         }
     }
-    console.log(bodies)
     return bodies
 }
