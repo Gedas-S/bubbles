@@ -1,4 +1,14 @@
+function load_body_types() {
+    return {
+        planet: Planet,
+        star: Star,
+    }
+}
+
+
 class Planet {
+    type = "planet"
+
     constructor({x, y, size, color}) {
         this.x = x
         this.y = y
@@ -33,6 +43,8 @@ class Planet {
 }
 
 class Star {
+    type = "star"
+
     constructor({size, color}) {
         this.size = size
         this.color = color
