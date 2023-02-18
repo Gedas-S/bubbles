@@ -42,12 +42,13 @@ initial_state = JSON.stringify({
 })
 
 function load_state() {
-    let state = JSON.parse(initial_state)
-    const body_types = load_body_types()
-    for (let system of Object.values(state.systems)) {
-        for (let [name, data] of Object.entries(system.bodies)) {
-            system.bodies[name] = new body_types[data.type](data)
+    const parsable_types = load_body_types()
+    const parser = (key, value) => {
+        if (parsable_types[value.type] !== undefined) {
+            return new parsable_types[value.type](value)
         }
+        return value
     }
-    return state
+
+    return JSON.parse(initial_state, parser)
 }
