@@ -3,6 +3,7 @@ function init() {
         state: load_state(),
     }
 
+    setup_ui()
     render_system(self.game.state.systems.parp)
     run_main_loop()
 }

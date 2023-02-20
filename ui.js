@@ -10,6 +10,25 @@ function select_body() {
     this.classList.add("selected")
 
     const info = document.getElementById("info-view")
-    info.style.display = "block"
+    info.style.display = ""
     info.replaceChildren(...get_body(this).draw_info())
+}
+
+function deselect() {
+    let selected = document.getElementsByClassName("selected")
+    for (const item of selected) {
+        item.classList.remove("selected")
+    }
+
+    document.getElementById("info-view").style.display = "none"
+}
+
+function setup_ui() {
+    deselect()
+
+    document.getElementById("system-view").addEventListener("click", function(e) {
+        if (e.target === e.currentTarget) {
+            deselect()
+        }
+    })
 }
