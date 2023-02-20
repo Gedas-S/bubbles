@@ -9,7 +9,9 @@ function load_body_types() {
 class Planet {
     type = "planet"
 
-    constructor({x, y, size, color}) {
+    constructor({system, name, x, y, size, color}) {
+        this.system = system
+        this.name = name
         this.x = x
         this.y = y
         this.size = size
@@ -18,6 +20,9 @@ class Planet {
 
     draw() {
         const elem = document.createElement("div")
+        elem.dataset.system = this.system;
+        elem.dataset.name = this.name;
+
         elem.classList.add("planet")
         elem.style.top = this.y + "%"
         elem.style.left = this.x + "%"
@@ -36,22 +41,33 @@ class Planet {
         )
         elem.appendChild(shadow)
 
-        elem.addEventListener("click", select_generic)
+        elem.addEventListener("click", select_body)
 
         return elem
+    }
+
+    draw_info() {
+        const elem = document.createElement("p")
+        elem.innerHTML = this.name
+        return [elem]
     }
 }
 
 class Star {
     type = "star"
 
-    constructor({size, color}) {
+    constructor({system, name, size, color}) {
+        this.system = system
+        this.name = name
         this.size = size
         this.color = color
     }
 
     draw() {
         const elem = document.createElement("div")
+        elem.dataset.system = this.system;
+        elem.dataset.name = this.name;
+
         elem.classList.add("star")
         elem.style.width = elem.style.height = this.size + "em"
         const rgb = this.color
@@ -59,8 +75,14 @@ class Star {
             "radial-gradient(farthest-side, " +
             "rgb(" + rgb + "), rgb(" + rgb + ") 60%, rgba(" + rgb +",0.7) 61%, rgba(" + rgb + ",0))"
         )
-        elem.addEventListener("click", select_generic)
+        elem.addEventListener("click", select_body)
 
         return elem
+    }
+
+    draw_info() {
+        const elem = document.createElement("p")
+        elem.innerHTML = this.name
+        return [elem]
     }
 }

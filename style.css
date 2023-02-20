@@ -3,7 +3,8 @@ html, body, #game-screen {
     margin: 0;
 }
 
-#game-screen, #system-view {
+#game-screen, #system-view, #info-view {
+    color: #6294ff;
     background-color: black;
 }
 
@@ -12,6 +13,20 @@ html, body, #game-screen {
     width: 70em;
     height: 50em;
     margin: auto;
+}
+
+#info-view {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: calc(98% - 4px);
+    width: 100%;
+    max-width: 30em;
+    border: 1px solid #6294ff;
+    border-right: none;
+    margin-top: 4px;
+    margin-bottom: 2%;
 }
 
 .star, .planet {
