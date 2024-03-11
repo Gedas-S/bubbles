@@ -9,9 +9,10 @@ function init() {
 }
 
 function run_main_loop() {
-    game.main_loop = setInterval(main_loop, 16)
+    requestAnimationFrame(main_loop)
 }
 
-function main_loop() {
-
+function main_loop(delta) {
+    
+    requestAnimationFrame(main_loop)
 }
