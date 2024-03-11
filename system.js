@@ -6,10 +6,11 @@ function render_system(system) {
 function draw_system(system) {
     bodies = []
     for (let data of Object.values(system.bodies)) {
-        if (data.type === "star") {
-            bodies.push((new Star(data)).draw())
-        } else if (data.type === "planet") {
-            bodies.push((new Planet(data)).draw())
+        switch (data.type) {
+            case "star":
+                bodies.push((new Star(data)).draw())
+            case "planet":
+                bodies.push((new Planet(data)).draw())
         }
     }
     return bodies
