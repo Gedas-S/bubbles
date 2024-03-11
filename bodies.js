@@ -47,9 +47,7 @@ class Planet {
     }
 
     draw_info() {
-        const elem = document.createElement("p")
-        elem.innerHTML = this.name
-        return [elem]
+        document.getElementById("info-view-title").textContent = this.name
     }
 }
 
@@ -81,8 +79,6 @@ class Star {
     }
 
     draw_info() {
-        const elem = document.createElement("p")
-        elem.innerHTML = this.name
-        return [elem]
+        document.getElementById("info-view-title").textContent = this.name
     }
 }

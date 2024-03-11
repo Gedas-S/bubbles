@@ -1,5 +1,10 @@
 html, body, #game-screen {
     height: 100%;
+
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
 }
 
@@ -19,13 +24,32 @@ html, body, #game-screen {
     position: absolute;
     top: 0;
     right: 0;
-    height: calc(98% - 4px);
+    height: 100%;
     width: 100%;
-    max-width: 30em;
-    border: 1px solid #6294ff;
-    border-right: none;
-    margin-top: 4px;
-    margin-bottom: 2%;
+}
+@media (min-width: 40em) {
+    #info-view {
+        max-width: 30em;
+        height: calc(98% - 4px);
+        margin-top: 4px;
+        margin-bottom: 2%;
+        border: 3px solid #6294ff;
+        border-right: none;
+        border-radius: 1px;
+    }
+}
+#info-view-top-bar {
+    font-size: 1.4em;
+}
+#info-view-back-button {
+    font-weight: bold;
+    float: left;
+    padding: 0.2em 0.4em;
+    transform: scale(-1, 1);
+    cursor: default;
+}
+#info-view-title {
+    padding: 0.2em 0;
 }
 
 .star, .planet {

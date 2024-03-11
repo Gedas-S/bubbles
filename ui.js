@@ -11,7 +11,7 @@ function select_body() {
 
     const info = document.getElementById("info-view")
     info.style.display = ""
-    info.replaceChildren(...get_body(this).draw_info())
+    get_body(this).draw_info()
 }
 
 function deselect() {
@@ -30,5 +30,8 @@ function setup_ui() {
         if (e.target === e.currentTarget) {
             deselect()
         }
+    })
+    document.getElementById("info-view-back-button").addEventListener("click", function(e) {
+        deselect()
     })
 }
