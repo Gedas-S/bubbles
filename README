@@ -1,0 +1,4 @@
+# Local dev
+Loading the page directly will run into localcache issues due to how local pages are handled by browsers.
+So start a basic server using e.g.
+`python -m http.server`
